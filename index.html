@@ -1,9 +1,10 @@
 <!Doctype html>
 <html> <head>
-<title>Video demo</title> <meta charset=utf-8/>		
+<title>Video demo</title>  <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>	
 <link  href="http://vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet" >
 <script src="http://vjs.zencdn.net/5.11/video.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.4.1/videojs-contrib-hls.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <style>
             html, body {
                 overflow: hidden;
@@ -23,6 +24,14 @@
         </style>
 
 </head>
+<button id="tv1">三立台灣台</button>
+<button id="tv2">東森新聞台</button>
+<button id="tv3">日本購物台</button>
+<button id="tv4">民視新聞台</button>
+<button id="tv5">原民電視台</button>
+<button id="tv6">年代新聞台6</button>
+<button id="tv7">三立都會台</button>
+
 <body>
     <video  id="myvideo"  class="video-js">  
     </video>
@@ -44,9 +53,45 @@
                 this.on('ended', function() {
                     // may trigger to do something
                 });
+
+                $("#tv1").on('click', function () {
+                    player.src({type: 'application/x-mpegURL', src: 'http://bcoveliveios-i.akamaihd.net/hls/live/226708/4338955585001/master.m3u8'});
+                    player.play();
+                });
+
+                $("#tv2").on('click', function () {
+                    player.src({type: 'application/x-mpegURL', src: 'http://220.228.49.16/live/fet003/index.m3u8'});
+                    player.play();
+                });
+
+                $("#tv3").on('click', function () {
+                    player.src({type: 'application/x-mpegURL', src: 'http://stream1.shopch.jp/HLS/out1/prog_index.m3u8'});
+                    player.play();
+                });
+
+                $("#tv4").on('click', function () {
+                    player.src({type: 'application/x-mpegURL', src: 'https://mozai.4gtv.tv/m3u8/embed/litv-ftv13/master.m3u8?token=l7sx4br1bzDJwB9vzH6UKQ&expires=1486819737&refer'});
+                    player.play();
+                });
+
+                $("#tv5").on('click', function () {
+                    player.src({type: 'application/x-mpegURL', src: 'http://waaarplive03-lh.akamaihd.net/i/titv_1@191631/master.m3u8'});
+                    player.play();
+                });
+
+                $("#tv6").on('click', function () {
+                    player.src({type: 'application/x-mpegURL', src: 'http://208.75.225.26/live/ERATVHD/index.m3u8'});
+                    player.play();
+                });
+
+                $("#tv7").on('click', function () {
+                    player.src({type: 'application/x-mpegURL', src: 'http://bcoveliveios-i.akamaihd.net/hls/live/226707/4338955585001/master.m3u8'});
+                    player.play();
+                });
+
+
         });
 
     </script>
 </body>
-</htm>
-
+</html>
